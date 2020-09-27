@@ -8,7 +8,10 @@
 
 ;;删除行
 (use-package crux
-  :bind ("C-c C-d" . crux-smart-kill-line))
+  :bind (("C-a" . crux-move-beginning-of-line)
+	 ("C-S-k" . crux-smart-kill-line)
+	 ("C-c C-o" . crux-top-join-line)
+	 ("C-S-d" . crux-duplicate-current-line-or-region)))
 
 ;;快速删除空格
 (use-package hungry-delete
@@ -37,7 +40,7 @@
 	ivy-re-builders-alist '((t . ivy--regex-ignore-order))))
 
 (use-package counsel
-  :after (ivy)
+  :after ivy
   :bind (("M-x" . counsel-M-x)
 	 ("C-x C-f" . counsel-find-file)
 	 ("C-c f" . counsel-recentf)
@@ -49,6 +52,20 @@
 	 ("C-r" . swiper-isearch-backward))
   :config (setq swiper-action-recenter t
 		swiper-include-line-number-in-search t))
+
+(use-package ivy-posframe
+  :ensure t
+  :after ivy
+  :diminish
+  :config
+  (setq ivy-posframe-display-functions-alist
+	'((swiper          . ivy-posframe-display-at-frame-center)
+          (complete-symbol . ivy-posframe-display-at-point)
+          (counsel-M-x     . ivy-posframe-display-at-frame-center)
+	  (counsel-find-file . ivy-posframe-display-at-frame-center)
+	  (ivy-switch-buffer . ivy-posframe-display-at-frame-center)
+          (t               . ivy-posframe-display-at-frame-center))))
+(ivy-posframe-mode 1)
 
 ;;自动补全插件
 (use-package company
@@ -77,6 +94,17 @@
 ;;只在编程语言下启用
 ;;(use-package flycheck
 ;;  :hook (prog-mode . flycheck-mode))
+
+;;功能键提示
+(use-package which-key
+  :defer nil
+  :config (which-key-mode))
+
+;;快速切换分屏
+(use-package ace-window
+  :bind (("M-o" . 'ace-window)))
+
+
 
 (provide 'init-packages)
 

@@ -38,6 +38,8 @@
 ;;选中替换
 (delete-selection-mode 1)
 
+;;关闭提示音
+(setq visible-bell 0)
 
 (provide 'init-startup)
 ;;; init-startup.el ends here
