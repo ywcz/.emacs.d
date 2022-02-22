@@ -18,4 +18,5 @@
 
 ;;; init.el ends here
 
-;;(put 'narrow-to-region 'disabled nil)
+;;(put 'narrow-to-region 'disabled nilao)
+;;老当益壮，宁移白首之心。穷且益坚，不坠青云之志。
