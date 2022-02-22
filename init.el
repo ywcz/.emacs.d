@@ -18,4 +18,4 @@
 
 ;;; init.el ends here
 
-(put 'narrow-to-region 'disabled nil)
+;;(put 'narrow-to-region 'disabled nil)
