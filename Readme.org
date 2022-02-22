@@ -1,3 +1,6 @@
-#+ STARTUP: showall
+#+STARTUP: showall
+#+title: Git Study
+#+date: <2022-02-22 Tue>
 
 * 新建分支moyu
+  [[https://github.com/ywcz/.emacs.d/][学个屁啊学]]
